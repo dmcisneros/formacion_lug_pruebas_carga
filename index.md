@@ -65,37 +65,37 @@ Existen multitud de herramientas que nos facilitan la posibilidad de lanzar prue
 
 ## 4º Plan de pruebas de Jmeter##
 Definimos de forma rápida los componentes de los que puede constar un plan de pruebas son:
-	• Test Plan. Representa la raíz del plan de pruebas.
-	• Thread Group. Representa un grupo de usuarios, cada thread es un usuario virtual.
-	• Controllers (Sampler, Logic Controler). 
-		○ Samplers: Realizan peticiones contra la aplicación 
-		○ Logic Controlers: Establecen el orden en que se ejecutan las peticiones.
-	• Config Element. Establecen propiedades de configuración.
-	• Assertion. Comprueban condiciones que aplican a las peticiones.
-	• Listeners. Almacenan datos de las peticiones.
-	• Timer. Añaden tiempo extra a la ejecución de las peticiones.
-	• Pre-Processor element. Realizan acciones o establecen configuraciones previa a la ejecución de los samplers.
-	• Post-Processor element. Realizan acciones o establecen configuraciones posteriormente a la ejecución de los samplers.
+- Test Plan. Representa la raíz del plan de pruebas.
+- Thread Group. Representa un grupo de usuarios, cada thread es un usuario virtual.
+- Controllers (Sampler, Logic Controler). 
+	- Samplers: Realizan peticiones contra la aplicación 
+	- Logic Controlers: Establecen el orden en que se ejecutan las peticiones.
+	- Config Element. Establecen propiedades de configuración.
+	- Assertion. Comprueban condiciones que aplican a las peticiones.
+	- Listeners. Almacenan datos de las peticiones.
+	- Timer. Añaden tiempo extra a la ejecución de las peticiones.
+	- Pre-Processor element. Realizan acciones o establecen configuraciones previa a la ejecución de los samplers.
+	- Post-Processor element. Realizan acciones o establecen configuraciones posteriormente a la ejecución de los samplers.
 
 **Plugins de Jmeter:** El uso de los componentes indicados anteriormente son la base de jmeter, sin embargo existen algunos plugins que se pueden incorporar a jmeter para facilitar la configuración de las pruebas y obtener unos reportes que nos ayudarán a analizar los resultados más facilmente. En ésta formación haremos uso de los siguientes plugins: 
 
-	• 3 Basic Graphs: https://jmeter-plugins.org/wiki/ResponseTimesOverTime/
-		○ Average Response Time 
-		○ Active Threads 
-		○ Successful/Failed Transactions 
-		
-	• 5 Additional Graphs :https://jmeter-plugins.org/wiki/ResponseCodesPerSecond/
-		○ Response Codes 
-		○ Bytes Throughput 
-		○ Connect Times 
-		○ Latency 
-		○ Hits/s 
+- 3 Basic Graphs: https://jmeter-plugins.org/wiki/ResponseTimesOverTime/
+	- Average Response Time 
+	- Active Threads 
+	- Successful/Failed Transactions 
+
+- 5 Additional Graphs :https://jmeter-plugins.org/wiki/ResponseCodesPerSecond/
+	- Response Codes 
+	- Bytes Throughput 
+	- Connect Times 
+	- Latency 
+	- Hits/s 
 
 
-Peticiones (Sampler): Las peticiones que se van a simular en el portal se podrán grabar haciendo uso de un proxy con cualquier navegador o dar de alta en jmeter directamente, en nuestro ejemplo por no ser el objetivo de este documento se hará de forma manual la introducción de páginas a las que se hará las peticiones
+**Peticiones (Sampler):** Las peticiones que se van a simular en el portal se podrán grabar haciendo uso de un proxy con cualquier navegador o dar de alta en jmeter directamente, en nuestro ejemplo por no ser el objetivo de este documento se hará de forma manual la introducción de páginas a las que se hará las peticiones
 
 
-Plan de pruebas de ejemplo: Abrir el fichero .jmx preparado para las pruebas: jmeter_files/01_test_lug_.jmx
+**Plan de pruebas de ejemplo:** Abrir el fichero .jmx preparado para las pruebas: jmeter_files/01_test_lug_.jmx
 
 Para la simulación de usuarios virtuales haremos uso de las opciones definidas a continuación que nos facilitan los plugins instalados: 
 	• jp@gc Throughput Shaping timer: Definiremos el número de peticiones que se realizaran por segundo (RPS)
@@ -138,25 +138,17 @@ Página con un módulo a medida con caché	/05_test_lug_custom_module_cache	El m
 
 
 Antes de lanzar las pruebas deberíamos monitorizar el comportamiento de nuestra arquitectura con herramientas como jvisualvm, jmc ó jconsole. Puntos de interés dentro de las métricas que podemos observar:
-		○ Consumo de CPU, comportamiento de JVM, nº de hilos, etc…
-		![Image](https://raw.githubusercontent.com/dmcisneros/lug_pruebas_carga/master/images/03.png)
+- Consumo de CPU, comportamiento de JVM, nº de hilos, etc…
+![Image](https://raw.githubusercontent.com/dmcisneros/lug_pruebas_carga/master/images/03.png)
 
 
 		 
 		
-		○ En la sección Mbeans podemos ver datos interesantes como son: 
-			§ Ehcache (Las caches disponibles de liferay y su comportamiento)
+- En la sección Mbeans podemos ver datos interesantes como son: 
+	- Ehcache (Las caches disponibles de liferay y su comportamiento)
 ![Image](https://raw.githubusercontent.com/dmcisneros/lug_pruebas_carga/master/images/04.png)
-	
-			
-													
-			§ Pool Hikari (Pool de conexiones usado por defecto en Liferay)
+	- Pool Hikari (Pool de conexiones usado por defecto en Liferay)
 ![Image](https://raw.githubusercontent.com/dmcisneros/lug_pruebas_carga/master/images/05.png)
-
-	
-
-
-
 
 ### Lanzamientos de Pruebas #1
 
@@ -165,13 +157,12 @@ Antes de lanzar las pruebas deberíamos monitorizar el comportamiento de nuestra
 	Página con un visor de contenidos con contenido web con plantilla sin cachear	/03_test_lug_publicador_cache
 	
 	
-Resultados:
+**Resultados:**
 
 Se puede observar como solo han sido cacheados 5 elementos en memoria y la página que visualiza los elementos de la plantilla no cacheable tiene unos tiempos de respuesta peores que la cacheada (Verde vs Rojo), en este caso solo tenemos 10 elementos en total pero cuando un sistema empieza a crecer en varios miles de contenidos se puede apreciar esta diferencia de forma más notable. 
 
 De la misma forma se observan picos constantes de latencias altas.
 ![Image](https://raw.githubusercontent.com/dmcisneros/lug_pruebas_carga/master/images/06.png)
-
 	
 ![Image](https://raw.githubusercontent.com/dmcisneros/lug_pruebas_carga/master/images/07.png)
 
@@ -179,15 +170,12 @@ De la misma forma se observan picos constantes de latencias altas.
 
 	
 
-
-
-
-### Pruebas #2: Se cambiará la configuración de la plantilla y se pondrá cacheable, 
+### Lanzamiento Pruebas #2: Se cambiará la configuración de la plantilla y se pondrá cacheable, 
 	Página con un visor de contenidos: 	/01_test_lug_visor 
 	Página con un publicador de contenidos con plantilla cacheada	/02_test_lug_publicador_no_cache
 	Página con un publicador de contenidos con plantilla sin cachear	/03_test_lug_publicador_cache
 
-Resultados:
+**Resultados:**
 Las paginas /02_test_lug_publicador_no_cache y /03_test_lug_publicador_cache ahora muestran resultados semejantes teniendo tiempos de latencia medios más bajos que los resultados anteriores, observandose que en solo 5 contenidos con plantillas no cacheadas empieza a degradarse la respuesta. 
 
 ![Image](https://raw.githubusercontent.com/dmcisneros/lug_pruebas_carga/master/images/09.png)
