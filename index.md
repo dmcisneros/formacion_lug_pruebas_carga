@@ -252,6 +252,6 @@ Resumen:
 Como desarrolladores debemos asegurarnos principalmente de que nuestro sistema funcionalmente sea lo que quiere el usuario final pero es igualmente importante asegurar la estabilidad y respuesta de nuestra arquitectura optimizando tiempos de respuesta, plan de contingencia ante caídas, asegurar la alta disponibilidad, etc…
 
 **Referencias:**
-[https://sdos.es/blog/pruebas-de-rendimiento-con-jmeter-ejemplos-basicos](https://sdos.es/blog/pruebas-de-rendimiento-con-jmeter-ejemplos-basicos)
-[https://www.softwaretestinghelp.com/performance-testing-tools-load-testing-tools/](https://www.softwaretestinghelp.com/performance-testing-tools-load-testing-tools/)
-[https://jmeter-plugins.org/wiki/ThroughputShapingTimer/](https://jmeter-plugins.org/wiki/ThroughputShapingTimer/)
+	-[https://sdos.es/blog/pruebas-de-rendimiento-con-jmeter-ejemplos-basicos](https://sdos.es/blog/pruebas-de-rendimiento-con-jmeter-ejemplos-basicos)
+	-[https://www.softwaretestinghelp.com/performance-testing-tools-load-testing-tools/](https://www.softwaretestinghelp.com/performance-testing-tools-load-testing-tools/)
+	-[https://jmeter-plugins.org/wiki/ThroughputShapingTimer/](https://jmeter-plugins.org/wiki/ThroughputShapingTimer/)
