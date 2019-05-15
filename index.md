@@ -42,6 +42,7 @@ Aquí entraría por ejemplo ver cómo se comporta el sistema ante X usuarios que
 Este es otro tipo de prueba de rendimiento del sistema. El objetivo de estas pruebas es someter al software a situaciones extremas, intentar que el sistema se caiga, para ver cómo se comporta, si es capaz de recuperarse.
 
 **Referencias:**
+	
 	- [https://sdos.es/blog/pruebas-de-rendimiento-con-jmeter-ejemplos-basicos](https://sdos.es/blog/pruebas-de-rendimiento-con-jmeter-ejemplos-basicos)
 	- [https://www.softwaretestinghelp.com/performance-testing-tools-load-testing-tools/](https://www.softwaretestinghelp.com/performance-testing-tools-load-testing-tools/)
 	- [https://jmeter-plugins.org/wiki/ThroughputShapingTimer/](https://jmeter-plugins.org/wiki/ThroughputShapingTimer/)
