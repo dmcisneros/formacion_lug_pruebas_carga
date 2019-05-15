@@ -160,6 +160,7 @@ Hilos = 80 * 2500/1000  = 200
 
 
 	• jp@gc Throughput Shaping timer:
+	![Image](images/01.png)
 
 	• jp@gc Ultimate Thread Group:
 
