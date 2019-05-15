@@ -1,7 +1,4 @@
 ## Welcome to GitHub Pages
-
-You can use the [editor on GitHub](https://github.com/dmcisneros/formacion_lug_pruebas_carga/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
-
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
 ### Markdown
@@ -42,22 +39,22 @@ Having trouble with Pages? Check out our [documentation](https://help.github.com
 
 
 
-Pruebas de Rendimiento (Sobre Liferay)
+#Pruebas de Rendimiento (Sobre Liferay)
 
-Entorno:
+##Entorno:
 	• Hardware:2,9 GHz Intel Core i7 (16 GB 2133 MHz LPDDR3)
 	• Sistema Operativo: macOS Mojave (10.14.4)
 	• Liferay Community Edition Portal 7.2.0 CE RC2
 	• Tomcat 9.0.17
 	• Java: JDK 1.8.202
 
-Requisitos previos:
+###Requisitos previos:
 	• Liferay arrancado: ./startup.sh
 	• Jvisualvm arrancado y conectado al proceso de tomcat: ./jvisualvm 
 	• Jmeter: ./jmeter.sh 
 
 
-Introducción: El objetivo de éste repositorio es ver como realizar unas pruebas de carga coherentes sobre un entorno Liferay (Aunque podría ser utilizado para cualquier aplicación Java).
+##Introducción: El objetivo de éste repositorio es ver como realizar unas pruebas de carga coherentes sobre un entorno Liferay (Aunque podría ser utilizado para cualquier aplicación Java).
 
 La pruebas de rendimiento nos servirán para:
 	• Demostrar que el sistema cumple los criterios de rendimiento.
@@ -66,12 +63,12 @@ La pruebas de rendimiento nos servirán para:
 
 Secuencia que debemos seguir para asegurar la estabilidad del sistema.
 
-1º Planificar y diseñar las pruebas de carga.
+##1º Planificar y diseñar las pruebas de carga.
 Antes de iniciar un proceso de carga contra nuestro sistemas debemos planificar 
 ¿Qué páginas u operaciones consideramos que serán más ejecutadas en nuestro sistema? Debemos intentar deteminar e intentar simular la variabilidad de los usuarios
 ¿Qué número de usuarios concurrentes esperamos tener cuando salgamos a producción?
 
-2º Que tipos de pruebas queremos lanzar
+##2º Que tipos de pruebas queremos lanzar
 
 Pruebas de carga
 Las pruebas de carga son un tipo de prueba de rendimiento del sistema. Con ellas observamos la respuesta de la aplicación ante un determinado número de peticiones.
@@ -240,9 +237,15 @@ Las paginas /02_test_lug_publicador_no_cache y /03_test_lug_publicador_cache aho
 5º Analizar resultados de las pruebas realizar tunning y ajustar 
 
 Una vez obtenido un punto de referencia se recomienda hacer un tunning para optimizar y mejorar tiempos de respuesta, para ello Liferay  indica algunas recomendaciones como serían:
-//PENDIENTE
-
-
+#portal-ext.properties: 
+##com.liferay.portal.servlet.filters.* (Desactivar Servlet filters no utilizados)
+##session.tracker.memory.enabled=false (Deshabilitar session tracket si está activo)
+##portlet.css.enabled=false (Ajustar la propiedad si no se va a utilizar)
+##locales.enabled= (Deshabilitar los que no se vayan a utilizar)
+##dl.store.impl=com.liferay.portal.store.file.system.AdvancedFileSystemStore (Recomendada)
+##direct.servlet.context.reload=false (En producción evitar la recarga de jsp en cada petición)
+#Ajustar Session timeout
+#Ajustar ADT caché: En system settings ajustar la propiedad "resource modification check interval", por defecto es 60ms
 
 Resumen: 
 Como desarrolladores debemos asegurarnos principalmente de que nuestro sistema funcionalmente sea lo que quiere el usuario final pero es igualmente importante asegurar la estabilidad y respuesta de nuestra arquitectura optimizando tiempos de respuesta, plan de contingencia ante caídas, asegurar la alta disponibilidad, etc…
