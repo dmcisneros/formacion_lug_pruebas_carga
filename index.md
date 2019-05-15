@@ -38,6 +38,10 @@ Aquí entraría por ejemplo ver cómo se comporta el sistema ante X usuarios que
 **Pruebas de estrés**
 Este es otro tipo de prueba de rendimiento del sistema. El objetivo de estas pruebas es someter al software a situaciones extremas, intentar que el sistema se caiga, para ver cómo se comporta, si es capaz de recuperarse.
 
+**Referencias:**
+	- [https://sdos.es/blog/pruebas-de-rendimiento-con-jmeter-ejemplos-basicos](https://sdos.es/blog/pruebas-de-rendimiento-con-jmeter-ejemplos-basicos)
+	- [https://www.softwaretestinghelp.com/performance-testing-tools-load-testing-tools/](https://www.softwaretestinghelp.com/performance-testing-tools-load-testing-tools/)
+	- [https://jmeter-plugins.org/wiki/ThroughputShapingTimer/](https://jmeter-plugins.org/wiki/ThroughputShapingTimer/)
 
 
 ### Markdown
@@ -251,7 +255,3 @@ Una vez obtenido un punto de referencia se recomienda hacer un tunning para opti
 Resumen: 
 Como desarrolladores debemos asegurarnos principalmente de que nuestro sistema funcionalmente sea lo que quiere el usuario final pero es igualmente importante asegurar la estabilidad y respuesta de nuestra arquitectura optimizando tiempos de respuesta, plan de contingencia ante caídas, asegurar la alta disponibilidad, etc…
 
-**Referencias:**
-	-[https://sdos.es/blog/pruebas-de-rendimiento-con-jmeter-ejemplos-basicos](https://sdos.es/blog/pruebas-de-rendimiento-con-jmeter-ejemplos-basicos)
-	-[https://www.softwaretestinghelp.com/performance-testing-tools-load-testing-tools/](https://www.softwaretestinghelp.com/performance-testing-tools-load-testing-tools/)
-	-[https://jmeter-plugins.org/wiki/ThroughputShapingTimer/](https://jmeter-plugins.org/wiki/ThroughputShapingTimer/)
