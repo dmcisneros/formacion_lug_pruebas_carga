@@ -21,7 +21,7 @@ La pruebas de rendimiento nos servirán para:
 	- Validar y verificar atributos de la calidad del sistema: escalabilidad, fiabilidad, uso de los recursos.
 	- Medir qué partes del sistema o de carga de trabajo provocan que el conjunto rinda mal.
 
-**Secuencia que debemos seguir para asegurar la estabilidad del sistema.**
+# Secuencia que debemos seguir para asegurar la estabilidad del sistema.
 
 
 ## 1º Planificar y diseñar las pruebas de carga.
