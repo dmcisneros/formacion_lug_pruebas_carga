@@ -158,9 +158,11 @@ El numero de peticiones e hilos (usuarios) con los que simularemos las pruebas s
 
 Hilos = 80 * 2500/1000  = 200
 
-- jp@gc Throughput Shaping timer:![Image](master/images/01.png)
+- jp@gc Throughput Shaping timer:
+![Image](master/images/01.png)
 
-- jp@gc Ultimate Thread Group:![Image](master/images/02.png)
+- jp@gc Ultimate Thread Group:
+![Image](master/images/02.png)
 
 	
 	
