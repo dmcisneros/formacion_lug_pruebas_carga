@@ -16,22 +16,26 @@
 El objetivo de éste repositorio es ver como realizar unas pruebas de carga coherentes sobre un entorno Liferay (Aunque podría ser utilizado para cualquier aplicación Java).
 
 La pruebas de rendimiento nos servirán para:
-- Demostrar que el sistema cumple los criterios de rendimiento.
-- Validar y verificar atributos de la calidad del sistema: escalabilidad, fiabilidad, uso de los recursos.
-- Medir qué partes del sistema o de carga de trabajo provocan que el conjunto rinda mal.
+	
+	- Demostrar que el sistema cumple los criterios de rendimiento.
+	- Validar y verificar atributos de la calidad del sistema: escalabilidad, fiabilidad, uso de los recursos.
+	- Medir qué partes del sistema o de carga de trabajo provocan que el conjunto rinda mal.
 
 **Secuencia que debemos seguir para asegurar la estabilidad del sistema.**
 
 
 ## 1º Planificar y diseñar las pruebas de carga.
-Antes de iniciar un proceso de carga contra nuestro sistemas debemos planificar 
-	- ¿Qué páginas u operaciones consideramos que serán más ejecutadas en nuestro sistema? Debemos intentar deteminar e intentar simular la variabilidad de los usuarios
+Antes de iniciar un proceso de carga contra nuestro sistemas debemos planificar:
+	
+	- ¿Qué páginas u operaciones consideramos que serán más ejecutadas en nuestro sistema? Debemos intentar deteminar e intentar simular la variabilidad de los usuarios.
+	
 	- ¿Qué número de usuarios concurrentes esperamos tener cuando salgamos a producción?
 
 ## 2º Que tipos de pruebas queremos lanzar
 
 **Pruebas de carga**
 Las pruebas de carga son un tipo de prueba de rendimiento del sistema. Con ellas observamos la respuesta de la aplicación ante un determinado número de peticiones.
+
 Aquí entraría por ejemplo ver cómo se comporta el sistema ante X usuarios que entran concurrentemente a la aplicación y realizan ciertas transacciones.
 
 **Pruebas de estrés**
