@@ -1,25 +1,28 @@
 # Pruebas de Rendimiento (Sobre Liferay)
 
 ## Entorno:
-	- Hardware:2,9 GHz Intel Core i7 (16 GB 2133 MHz LPDDR3)
-	- Sistema Operativo: macOS Mojave (10.14.4)
-	- Liferay Community Edition Portal 7.2.0 CE RC2
-	- Tomcat 9.0.17
-	- Java: JDK 1.8.202
+- Hardware:2,9 GHz Intel Core i7 (16 GB 2133 MHz LPDDR3)
+- Sistema Operativo: macOS Mojave (10.14.4)
+- Liferay Community Edition Portal 7.2.0 CE RC2
+- Tomcat 9.0.17
+- Java: JDK 1.8.202
 
 ## Requisitos previos:
-	- Liferay arrancado: ./startup.sh
-	- Jvisualvm arrancado y conectado al proceso de tomcat: ./jvisualvm 
-	- Jmeter: ./jmeter.sh 
+- Liferay arrancado: 
+	- ./startup.sh
+- Jvisualvm arrancado y conectado al proceso de tomcat: 
+	- ./jvisualvm 
+- Jmeter: 
+	- ./jmeter.sh 
 
 ## Introducción: 
 El objetivo de éste repositorio es ver como realizar unas pruebas de carga coherentes sobre un entorno Liferay (Aunque podría ser utilizado para cualquier aplicación Java).
 
 La pruebas de rendimiento nos servirán para:
 	
-	- Demostrar que el sistema cumple los criterios de rendimiento.
-	- Validar y verificar atributos de la calidad del sistema: escalabilidad, fiabilidad, uso de los recursos.
-	- Medir qué partes del sistema o de carga de trabajo provocan que el conjunto rinda mal.
+- Demostrar que el sistema cumple los criterios de rendimiento.
+- Validar y verificar atributos de la calidad del sistema: escalabilidad, fiabilidad, uso de los recursos.
+- Medir qué partes del sistema o de carga de trabajo provocan que el conjunto rinda mal.
 
 # Secuencia que debemos seguir para asegurar la estabilidad del sistema.
 
@@ -27,9 +30,9 @@ La pruebas de rendimiento nos servirán para:
 ## 1º Planificar y diseñar las pruebas de carga.
 Antes de iniciar un proceso de carga contra nuestro sistemas debemos planificar:
 	
-	- ¿Qué páginas u operaciones consideramos que serán más ejecutadas en nuestro sistema? Debemos intentar deteminar e intentar simular la variabilidad de los usuarios.
+- ¿Qué páginas u operaciones consideramos que serán más ejecutadas en nuestro sistema? Debemos intentar deteminar e intentar simular la variabilidad de los usuarios.
 	
-	- ¿Qué número de usuarios concurrentes esperamos tener cuando salgamos a producción?
+- ¿Qué número de usuarios concurrentes esperamos tener cuando salgamos a producción?
 
 ## 2º Que tipos de pruebas queremos lanzar
 
@@ -98,8 +101,8 @@ Definimos de forma rápida los componentes de los que puede constar un plan de 
 **Plan de pruebas de ejemplo:** Abrir el fichero .jmx preparado para las pruebas: jmeter_files/01_test_lug_.jmx
 
 Para la simulación de usuarios virtuales haremos uso de las opciones definidas a continuación que nos facilitan los plugins instalados: 
-	• jp@gc Throughput Shaping timer: Definiremos el número de peticiones que se realizaran por segundo (RPS)
-	• jp@gc Ultimate Thread Group: Se indicarán el número de hilos (usuarios)
+- jp@gc Throughput Shaping timer: Definiremos el número de peticiones que se realizaran por segundo (RPS)
+- jp@gc Ultimate Thread Group: Se indicarán el número de hilos (usuarios)
 
 Dichas gráficas deben ser semejantes y los hilos que se indiquen en la opción de thread group se deben calcular con la siguiente fórmula:
 
