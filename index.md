@@ -1,6 +1,18 @@
-## Welcome to GitHub Pages
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+#Pruebas de Rendimiento (Sobre Liferay)
 
+##Entorno:
+	• Hardware:2,9 GHz Intel Core i7 (16 GB 2133 MHz LPDDR3)
+	• Sistema Operativo: macOS Mojave (10.14.4)
+	• Liferay Community Edition Portal 7.2.0 CE RC2
+	• Tomcat 9.0.17
+	• Java: JDK 1.8.202
+
+###Requisitos previos:
+	• Liferay arrancado: ./startup.sh
+	• Jvisualvm arrancado y conectado al proceso de tomcat: ./jvisualvm 
+	• Jmeter: ./jmeter.sh 
+	
+	
 ### Markdown
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
@@ -36,22 +48,6 @@ Having trouble with Pages? Check out our [documentation](https://help.github.com
 
 
 
-
-
-
-#Pruebas de Rendimiento (Sobre Liferay)
-
-##Entorno:
-	• Hardware:2,9 GHz Intel Core i7 (16 GB 2133 MHz LPDDR3)
-	• Sistema Operativo: macOS Mojave (10.14.4)
-	• Liferay Community Edition Portal 7.2.0 CE RC2
-	• Tomcat 9.0.17
-	• Java: JDK 1.8.202
-
-###Requisitos previos:
-	• Liferay arrancado: ./startup.sh
-	• Jvisualvm arrancado y conectado al proceso de tomcat: ./jvisualvm 
-	• Jmeter: ./jmeter.sh 
 
 
 ##Introducción: El objetivo de éste repositorio es ver como realizar unas pruebas de carga coherentes sobre un entorno Liferay (Aunque podría ser utilizado para cualquier aplicación Java).
