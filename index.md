@@ -7,19 +7,18 @@
 	- Tomcat 9.0.17
 	- Java: JDK 1.8.202
 
-### Requisitos previos:
+## Requisitos previos:
 	- Liferay arrancado: ./startup.sh
 	- Jvisualvm arrancado y conectado al proceso de tomcat: ./jvisualvm 
 	- Jmeter: ./jmeter.sh 
-	
 
 ## Introducción: 
 El objetivo de éste repositorio es ver como realizar unas pruebas de carga coherentes sobre un entorno Liferay (Aunque podría ser utilizado para cualquier aplicación Java).
 
 La pruebas de rendimiento nos servirán para:
-	- Demostrar que el sistema cumple los criterios de rendimiento.
-	- Validar y verificar atributos de la calidad del sistema: escalabilidad, fiabilidad, uso de los recursos.
-	- Medir qué partes del sistema o de carga de trabajo provocan que el conjunto rinda mal.
+- Demostrar que el sistema cumple los criterios de rendimiento.
+- Validar y verificar atributos de la calidad del sistema: escalabilidad, fiabilidad, uso de los recursos.
+- Medir qué partes del sistema o de carga de trabajo provocan que el conjunto rinda mal.
 
 **Secuencia que debemos seguir para asegurar la estabilidad del sistema.**
 
