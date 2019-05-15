@@ -1,18 +1,45 @@
-#Pruebas de Rendimiento (Sobre Liferay)
+# Pruebas de Rendimiento (Sobre Liferay)
 
-##Entorno:
-	• Hardware:2,9 GHz Intel Core i7 (16 GB 2133 MHz LPDDR3)
-	• Sistema Operativo: macOS Mojave (10.14.4)
-	• Liferay Community Edition Portal 7.2.0 CE RC2
-	• Tomcat 9.0.17
-	• Java: JDK 1.8.202
+## Entorno:
+	- Hardware:2,9 GHz Intel Core i7 (16 GB 2133 MHz LPDDR3)
+	- Sistema Operativo: macOS Mojave (10.14.4)
+	- Liferay Community Edition Portal 7.2.0 CE RC2
+	- Tomcat 9.0.17
+	- Java: JDK 1.8.202
 
-###Requisitos previos:
-	• Liferay arrancado: ./startup.sh
-	• Jvisualvm arrancado y conectado al proceso de tomcat: ./jvisualvm 
-	• Jmeter: ./jmeter.sh 
+### Requisitos previos:
+	- Liferay arrancado: ./startup.sh
+	- Jvisualvm arrancado y conectado al proceso de tomcat: ./jvisualvm 
+	- Jmeter: ./jmeter.sh 
 	
-	
+
+## Introducción: 
+El objetivo de éste repositorio es ver como realizar unas pruebas de carga coherentes sobre un entorno Liferay (Aunque podría ser utilizado para cualquier aplicación Java).
+
+La pruebas de rendimiento nos servirán para:
+	- Demostrar que el sistema cumple los criterios de rendimiento.
+	- Validar y verificar atributos de la calidad del sistema: escalabilidad, fiabilidad, uso de los recursos.
+	- Medir qué partes del sistema o de carga de trabajo provocan que el conjunto rinda mal.
+
+**Secuencia que debemos seguir para asegurar la estabilidad del sistema.**
+
+
+## 1º Planificar y diseñar las pruebas de carga.
+Antes de iniciar un proceso de carga contra nuestro sistemas debemos planificar 
+	- ¿Qué páginas u operaciones consideramos que serán más ejecutadas en nuestro sistema? Debemos intentar deteminar e intentar simular la variabilidad de los usuarios
+	- ¿Qué número de usuarios concurrentes esperamos tener cuando salgamos a producción?
+
+## 2º Que tipos de pruebas queremos lanzar
+
+**Pruebas de carga**
+Las pruebas de carga son un tipo de prueba de rendimiento del sistema. Con ellas observamos la respuesta de la aplicación ante un determinado número de peticiones.
+Aquí entraría por ejemplo ver cómo se comporta el sistema ante X usuarios que entran concurrentemente a la aplicación y realizan ciertas transacciones.
+
+**Pruebas de estrés**
+Este es otro tipo de prueba de rendimiento del sistema. El objetivo de estas pruebas es someter al software a situaciones extremas, intentar que el sistema se caiga, para ver cómo se comporta, si es capaz de recuperarse.
+
+
+
 ### Markdown
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
@@ -50,28 +77,6 @@ Having trouble with Pages? Check out our [documentation](https://help.github.com
 
 
 
-##Introducción: El objetivo de éste repositorio es ver como realizar unas pruebas de carga coherentes sobre un entorno Liferay (Aunque podría ser utilizado para cualquier aplicación Java).
-
-La pruebas de rendimiento nos servirán para:
-	• Demostrar que el sistema cumple los criterios de rendimiento.
-	• Validar y verificar atributos de la calidad del sistema: escalabilidad, fiabilidad, uso de los recursos.
-	• Medir qué partes del sistema o de carga de trabajo provocan que el conjunto rinda mal.
-
-Secuencia que debemos seguir para asegurar la estabilidad del sistema.
-
-##1º Planificar y diseñar las pruebas de carga.
-Antes de iniciar un proceso de carga contra nuestro sistemas debemos planificar 
-¿Qué páginas u operaciones consideramos que serán más ejecutadas en nuestro sistema? Debemos intentar deteminar e intentar simular la variabilidad de los usuarios
-¿Qué número de usuarios concurrentes esperamos tener cuando salgamos a producción?
-
-##2º Que tipos de pruebas queremos lanzar
-
-Pruebas de carga
-Las pruebas de carga son un tipo de prueba de rendimiento del sistema. Con ellas observamos la respuesta de la aplicación ante un determinado número de peticiones.
-Aquí entraría por ejemplo ver cómo se comporta el sistema ante X usuarios que entran concurrentemente a la aplicación y realizan ciertas transacciones.
-
-Pruebas de estrés
-Este es otro tipo de prueba de rendimiento del sistema. El objetivo de estas pruebas es someter al software a situaciones extremas, intentar que el sistema se caiga, para ver cómo se comporta, si es capaz de recuperarse.
 
 
 3º Que herramientas podemos usar para hacer pruebas de carga
@@ -246,7 +251,7 @@ Una vez obtenido un punto de referencia se recomienda hacer un tunning para opti
 Resumen: 
 Como desarrolladores debemos asegurarnos principalmente de que nuestro sistema funcionalmente sea lo que quiere el usuario final pero es igualmente importante asegurar la estabilidad y respuesta de nuestra arquitectura optimizando tiempos de respuesta, plan de contingencia ante caídas, asegurar la alta disponibilidad, etc…
 
-Referencias:
-https://sdos.es/blog/pruebas-de-rendimiento-con-jmeter-ejemplos-basicos
-https://www.softwaretestinghelp.com/performance-testing-tools-load-testing-tools/
-https://jmeter-plugins.org/wiki/ThroughputShapingTimer/
+**Referencias:**
+[https://sdos.es/blog/pruebas-de-rendimiento-con-jmeter-ejemplos-basicos](https://sdos.es/blog/pruebas-de-rendimiento-con-jmeter-ejemplos-basicos)
+[https://www.softwaretestinghelp.com/performance-testing-tools-load-testing-tools/](https://www.softwaretestinghelp.com/performance-testing-tools-load-testing-tools/)
+[https://jmeter-plugins.org/wiki/ThroughputShapingTimer/](https://jmeter-plugins.org/wiki/ThroughputShapingTimer/)
