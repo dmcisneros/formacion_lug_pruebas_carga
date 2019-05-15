@@ -157,7 +157,7 @@ Hilos = 200  * 2500/1000  = 500
 El numero de peticiones e hilos (usuarios) con los que simularemos las pruebas serán 200 usuarios concurrentes con una rampa de subida y otra de bajada para hacerla progresiva quedando las gráficas de la siguiente forma:
 
 Hilos = 80 * 2500/1000  = 200
-	![Image](images/01.png)
+	![Image](master/images/01.png)
 
 
 	• jp@gc Throughput Shaping timer:
