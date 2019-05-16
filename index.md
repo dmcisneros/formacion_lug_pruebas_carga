@@ -88,12 +88,12 @@ Definimos de forma rápida los componentes de los que puede constar un plan de 
 
 **Plugins de Jmeter:** El uso de los componentes indicados anteriormente son la base de jmeter, sin embargo existen algunos plugins que se pueden incorporar a jmeter para facilitar la configuración de las pruebas y obtener unos reportes que nos ayudarán a analizar los resultados más facilmente. En ésta formación haremos uso de los siguientes plugins: 
 
-- 3 Basic Graphs: https://jmeter-plugins.org/wiki/ResponseTimesOverTime/
+- **3 Basic Graphs:** [https://jmeter-plugins.org/wiki/ResponseTimesOverTime/](https://jmeter-plugins.org/wiki/ResponseTimesOverTime/) 
 	- Average Response Time 
 	- Active Threads 
 	- Successful/Failed Transactions 
 
-- 5 Additional Graphs :https://jmeter-plugins.org/wiki/ResponseCodesPerSecond/
+- **5 Additional Graphs :** [https://jmeter-plugins.org/wiki/ResponseCodesPerSecond/]https://jmeter-plugins.org/wiki/ResponseCodesPerSecond/) 
 	- Response Codes 
 	- Bytes Throughput 
 	- Connect Times 
