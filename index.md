@@ -160,10 +160,9 @@ Antes de lanzar las pruebas deberíamos monitorizar el comportamiento de nuestra
 ![Image](https://raw.githubusercontent.com/dmcisneros/lug_pruebas_carga/master/images/05.png)
 
 ### Lanzamientos de Pruebas #1
-
-	Página con un visor de contenidos: 	/01_test_lug_visor 
-	Página con un visor de contenidos con contenido web con plantilla cacheada	/02_test_lug_publicador_no_cache
-	Página con un visor de contenidos con contenido web con plantilla sin cachear	/03_test_lug_publicador_cache
+- Página con un visor de contenidos: /01_test_lug_visor 
+- Página con un visor de contenidos con contenido web con plantilla cacheada /02_test_lug_publicador_no_cache
+- Página con un visor de contenidos con contenido web con plantilla sin cachear	/03_test_lug_publicador_cache
 	
 	
 **Resultados:**
@@ -179,13 +178,11 @@ De la misma forma se observan picos constantes de latencias altas.
 
 	
 
-### Lanzamiento Pruebas #2: Se cambiará la configuración de la plantilla y se pondrá cacheable, 
-	Página con un visor de contenidos: 	/01_test_lug_visor 
-	Página con un publicador de contenidos con plantilla cacheada	/02_test_lug_publicador_no_cache
-	Página con un publicador de contenidos con plantilla sin cachear	/03_test_lug_publicador_cache
+### Lanzamiento Pruebas #2: 
+Se cambiará la configuración de la plantilla que no era cacheable, ahora se pondrá cacheable y se ejecutarán las mismas pruebas de carga de Pruebas #1 . 
 
 **Resultados:**
-Las paginas /02_test_lug_publicador_no_cache y /03_test_lug_publicador_cache ahora muestran resultados semejantes teniendo tiempos de latencia medios más bajos que los resultados anteriores, observandose que en solo 5 contenidos con plantillas no cacheadas empieza a degradarse la respuesta. 
+Las paginas **/02_test_lug_publicador_no_cache** y **/03_test_lug_publicador_cache** ahora muestran resultados semejantes teniendo tiempos de latencia medios más bajos que los resultados anteriores, observandose que en solo 5 contenidos con plantillas no cacheadas empieza a degradarse la respuesta. 
 
 ![Image](https://raw.githubusercontent.com/dmcisneros/lug_pruebas_carga/master/images/09.png)
 
@@ -221,38 +218,6 @@ Como desarrolladores debemos asegurarnos principalmente de que nuestro sistema f
 	- [https://www.softwaretestinghelp.com/performance-testing-tools-load-testing-tools/](https://www.softwaretestinghelp.com/performance-testing-tools-load-testing-tools/)
 	- [https://jmeter-plugins.org/wiki/ThroughputShapingTimer/](https://jmeter-plugins.org/wiki/ThroughputShapingTimer/)
 
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/dmcisneros/formacion_lug_pruebas_carga/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
 
 
 
