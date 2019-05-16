@@ -136,15 +136,15 @@ Vamos a analizar el comportamiento el portal de liferay con 10 contenidos web 5 
 
 **Pruebas previstas:**
 
-- Página con un visor de contenidos:
+- **Página con un visor de contenidos:**
 	- Url: /01_test_lug_visor
 	- Descripción: Al ser el visor por defecto con un contenido cacheable debería ser el resultado más optimo de las pruebas realizadas
 
-- Página con un publicador de contenidos con contenidos web con plantilla sin cachear:
+- **Página con un publicador de contenidos con contenidos web con plantilla sin cachear:**
 	- Url: /02_test_lug_publicador_no_cache
 	- Descripción: Al no usar la caché de liferay tendrá que procesar la plantilla del contenido cada vez que realice su renderizado con el coste computacional correspondiente.
 		
-- Página con un publicador de contenidos con contenidos web con plantilla cacheada:
+- **Página con un publicador de contenidos con contenidos web con plantilla cacheada:**
 	- Url: /03_test_lug_publicador_cache
 	- Descripción: En la primera carga el resultado será semejante a la página anterior pero en posteriores los tiempos de respuesta serán mejores al estar cacheada la plantilla.
 
@@ -160,9 +160,9 @@ Antes de lanzar las pruebas deberíamos monitorizar el comportamiento de nuestra
 ![Image](https://raw.githubusercontent.com/dmcisneros/lug_pruebas_carga/master/images/05.png)
 
 ### Lanzamientos de Pruebas #1
-- Página con un visor de contenidos: /01_test_lug_visor 
-- Página con un visor de contenidos con contenido web con plantilla cacheada /02_test_lug_publicador_no_cache
-- Página con un visor de contenidos con contenido web con plantilla sin cachear	/03_test_lug_publicador_cache
+- **Página con un visor de contenidos:** /01_test_lug_visor 
+- **Página con un visor de contenidos con contenido web con plantilla cacheada:** /02_test_lug_publicador_no_cache
+- **Página con un visor de contenidos con contenido web con plantilla sin cachear:** /03_test_lug_publicador_cache
 	
 	
 **Resultados:**
