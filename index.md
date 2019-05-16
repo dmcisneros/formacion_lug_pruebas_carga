@@ -130,7 +130,7 @@ Hilos = 80 * 2500/1000  = 200
 ![Image](https://raw.githubusercontent.com/dmcisneros/lug_pruebas_carga/master/images/02.png)
 	
 
-## 5º Lanzar pruebas y monitorizar comportamiento##
+## 5º Lanzar pruebas y monitorizar comportamiento
 Vamos a analizar el comportamiento el portal de liferay con 10 contenidos web 5 con una estructura con plantilla no cacheable y otros 5 con una estructura con plantilla cacheable.
 
 
@@ -144,19 +144,14 @@ Página con un módulo a medida sin caché	/04_test_lug_custom_module_no_cache	U
 Página con un módulo a medida con caché	/05_test_lug_custom_module_cache	El mismo módulo anterior hará uso de la caché de liferay guardando objetos que no cambien su estado y puedan ser cacheados.
 
 
-
-
 Antes de lanzar las pruebas deberíamos monitorizar el comportamiento de nuestra arquitectura con herramientas como jvisualvm, jmc ó jconsole. Puntos de interés dentro de las métricas que podemos observar:
-- Consumo de CPU, comportamiento de JVM, nº de hilos, etc…
+- **Consumo de CPU, comportamiento de JVM, nº de hilos, etc…**
 ![Image](https://raw.githubusercontent.com/dmcisneros/lug_pruebas_carga/master/images/03.png)
-
-
-		 
-		
+				
 - En la sección Mbeans podemos ver datos interesantes como son: 
-	- Ehcache (Las caches disponibles de liferay y su comportamiento)
+	- **Ehcache** (Las caches disponibles de liferay y su comportamiento)
 ![Image](https://raw.githubusercontent.com/dmcisneros/lug_pruebas_carga/master/images/04.png)
-	- Pool Hikari (Pool de conexiones usado por defecto en Liferay)
+	- vPool Hikari** (Pool de conexiones usado por defecto en Liferay)
 ![Image](https://raw.githubusercontent.com/dmcisneros/lug_pruebas_carga/master/images/05.png)
 
 ### Lanzamientos de Pruebas #1
