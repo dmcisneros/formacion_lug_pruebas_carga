@@ -93,7 +93,7 @@ Definimos de forma rápida los componentes de los que puede constar un plan de 
 	- Active Threads 
 	- Successful/Failed Transactions 
 
-- **5 Additional Graphs :** [https://jmeter-plugins.org/wiki/ResponseCodesPerSecond/]https://jmeter-plugins.org/wiki/ResponseCodesPerSecond/) 
+- **5 Additional Graphs :** [https://jmeter-plugins.org/wiki/ResponseCodesPerSecond/](https://jmeter-plugins.org/wiki/ResponseCodesPerSecond/) 
 	- Response Codes 
 	- Bytes Throughput 
 	- Connect Times 
