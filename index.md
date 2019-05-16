@@ -136,12 +136,17 @@ Vamos a analizar el comportamiento el portal de liferay con 10 contenidos web 5 
 
 **Pruebas previstas:**
 
-Descripción	Url	Resultado esperado
-Página con un visor de contenidos: 	/01_test_lug_visor 	Al ser el visor por defecto con un contenido cacheable debería ser el resultado más optimo de las pruebas realizadas
-Página con un publicador de contenidos con contenidos web con plantilla sin cachear	/02_test_lug_publicador_no_cache	Al no usar la caché de liferay tendrá que procesar la plantilla del contenido cada vez que realice su renderizado con el coste computacional correspondiente
-Página con un publicador de contenidos con contenidos web con plantilla cacheada	/03_test_lug_publicador_cache	En la primera carga el resultado será semejante a la página anterior pero en posteriores los tiempos de respuesta serán mejores al estar cacheada la plantilla
-Página con un módulo a medida sin caché	/04_test_lug_custom_module_no_cache	Un módulo hará lógica de negocio cada vez que se realice una petición sobre la página donde se ubica.
-Página con un módulo a medida con caché	/05_test_lug_custom_module_cache	El mismo módulo anterior hará uso de la caché de liferay guardando objetos que no cambien su estado y puedan ser cacheados.
+- Página con un visor de contenidos:
+	- Url: /01_test_lug_visor
+	- Descripción: Al ser el visor por defecto con un contenido cacheable debería ser el resultado más optimo de las pruebas realizadas
+
+- Página con un publicador de contenidos con contenidos web con plantilla sin cachear:
+	- Url: /02_test_lug_publicador_no_cache
+	- Descripción: Al no usar la caché de liferay tendrá que procesar la plantilla del contenido cada vez que realice su renderizado con el coste computacional correspondiente.
+		
+- Página con un publicador de contenidos con contenidos web con plantilla cacheada:
+	- Url: /03_test_lug_publicador_cache
+	- Descripción: En la primera carga el resultado será semejante a la página anterior pero en posteriores los tiempos de respuesta serán mejores al estar cacheada la plantilla.
 
 
 Antes de lanzar las pruebas deberíamos monitorizar el comportamiento de nuestra arquitectura con herramientas como jvisualvm, jmc ó jconsole. Puntos de interés dentro de las métricas que podemos observar:
