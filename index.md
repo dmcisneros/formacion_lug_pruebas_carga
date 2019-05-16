@@ -72,19 +72,19 @@ Existen multitud de herramientas que nos facilitan la posibilidad de lanzar prue
 - Rational Performance Tester
 - Testing Anywhere
 
-## 4º Plan de pruebas de Jmeter##
+## 4º Plan de pruebas de Jmeter
 Definimos de forma rápida los componentes de los que puede constar un plan de pruebas son:
-- Test Plan. Representa la raíz del plan de pruebas.
-- Thread Group. Representa un grupo de usuarios, cada thread es un usuario virtual.
-- Controllers (Sampler, Logic Controler). 
-	- Samplers: Realizan peticiones contra la aplicación 
-	- Logic Controlers: Establecen el orden en que se ejecutan las peticiones.
-	- Config Element. Establecen propiedades de configuración.
-	- Assertion. Comprueban condiciones que aplican a las peticiones.
-	- Listeners. Almacenan datos de las peticiones.
-	- Timer. Añaden tiempo extra a la ejecución de las peticiones.
-	- Pre-Processor element. Realizan acciones o establecen configuraciones previa a la ejecución de los samplers.
-	- Post-Processor element. Realizan acciones o establecen configuraciones posteriormente a la ejecución de los samplers.
+- **Test Plan.** Representa la raíz del plan de pruebas.
+- **Thread Group.** Representa un grupo de usuarios, cada thread es un usuario virtual.
+- **Controllers** (Sampler, Logic Controler). 
+	- **Samplers:** Realizan peticiones contra la aplicación 
+	- **Logic Controlers:** Establecen el orden en que se ejecutan las peticiones.
+	- **Config Element.** Establecen propiedades de configuración.
+	- **Assertion.** Comprueban condiciones que aplican a las peticiones.
+	- **Listeners.** Almacenan datos de las peticiones.
+	- **Timer.** Añaden tiempo extra a la ejecución de las peticiones.
+	- **Pre-Processor element.** Realizan acciones o establecen configuraciones previa a la ejecución de los samplers.
+	- **Post-Processor element.** Realizan acciones o establecen configuraciones posteriormente a la ejecución de los samplers.
 
 **Plugins de Jmeter:** El uso de los componentes indicados anteriormente son la base de jmeter, sin embargo existen algunos plugins que se pueden incorporar a jmeter para facilitar la configuración de las pruebas y obtener unos reportes que nos ayudarán a analizar los resultados más facilmente. En ésta formación haremos uso de los siguientes plugins: 
 
@@ -111,17 +111,17 @@ Para la simulación de usuarios virtuales haremos uso de las opciones definidas 
 - jp@gc Ultimate Thread Group: Se indicarán el número de hilos (usuarios)
 
 Dichas gráficas deben ser semejantes y los hilos que se indiquen en la opción de thread group se deben calcular con la siguiente fórmula:
-
+```markdown
 RPS * <max response time> / 1000
-
+```
 Siendo la variable "max response time" lo que definamos como tiempo máximo de respuesta para dar como válida la petición, un valor válido podría ser 2.5 segundos (2500 ms) quedando la configuración:
-
+```markdown
 Hilos = 200  * 2500/1000  = 500 
-
+```
 El numero de peticiones e hilos (usuarios) con los que simularemos las pruebas serán 200 usuarios concurrentes con una rampa de subida y otra de bajada para hacerla progresiva quedando las gráficas de la siguiente forma:
-
+```markdown
 Hilos = 80 * 2500/1000  = 200
-
+```
 
 - jp@gc Throughput Shaping timer:
 ![Image](https://raw.githubusercontent.com/dmcisneros/lug_pruebas_carga/master/images/01.png)
@@ -212,7 +212,7 @@ Una vez obtenido un punto de referencia se recomienda hacer un tunning para opti
 - #Ajustar Session timeout
 - #Ajustar ADT caché: En system settings ajustar la propiedad "resource modification check interval", por defecto es 60ms
 
-Resumen: 
+#Resumen: 
 Como desarrolladores debemos asegurarnos principalmente de que nuestro sistema funcionalmente sea lo que quiere el usuario final pero es igualmente importante asegurar la estabilidad y respuesta de nuestra arquitectura optimizando tiempos de respuesta, plan de contingencia ante caídas, asegurar la alta disponibilidad, etc…
 
 **Referencias:**
