@@ -9,11 +9,17 @@
 
 ## Requisitos previos:
 - Liferay arrancado: 
+	```markdown
 	- ./startup.sh
+	```
 - Jvisualvm arrancado y conectado al proceso de tomcat: 
+	```markdown
 	- ./jvisualvm 
+	```
 - Jmeter: 
+	```markdown
 	- ./jmeter.sh 
+	```
 
 ## Introducción: 
 El objetivo de éste repositorio es ver como realizar unas pruebas de carga coherentes sobre un entorno Liferay (Aunque podría ser utilizado para cualquier aplicación Java).
