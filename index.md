@@ -10,15 +10,15 @@
 ## Requisitos previos:
 - Liferay arrancado: 
 	```markdown
-	- ./startup.sh
+	./startup.sh
 	```
 - Jvisualvm arrancado y conectado al proceso de tomcat: 
 	```markdown
-	- ./jvisualvm 
+	./jvisualvm 
 	```
 - Jmeter: 
 	```markdown
-	- ./jmeter.sh 
+	./jmeter.sh 
 	```
 
 ## Introducción: 
