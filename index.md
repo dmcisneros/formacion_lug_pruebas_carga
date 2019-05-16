@@ -196,21 +196,21 @@ Las paginas /02_test_lug_publicador_no_cache y /03_test_lug_publicador_cache aho
 
 
 
-(*) En el caso de tener una degradación en el portal sería conveniente realizar un análisis de hilos con un thread dumps (Ver:/thread_dumps/README.MD )
+(*) En el caso de tener una degradación en el portal sería conveniente realizar un análisis de hilos con un thread dumps (Ver:https://github.com/dmcisneros/lug_pruebas_carga/tree/master/thread_dumps)
 
 
 ## 6º Analizar resultados de las pruebas realizar tunning y ajustar
 
 Una vez obtenido un punto de referencia se recomienda hacer un tunning para optimizar y mejorar tiempos de respuesta, para ello Liferay  indica algunas recomendaciones como serían:
-- #portal-ext.properties: 
-- ##com.liferay.portal.servlet.filters.* (Desactivar Servlet filters no utilizados)
-- ##session.tracker.memory.enabled=false (Deshabilitar session tracket si está activo)
-- ##portlet.css.enabled=false (Ajustar la propiedad si no se va a utilizar)
-- ##locales.enabled= (Deshabilitar los que no se vayan a utilizar)
-- ##dl.store.impl=com.liferay.portal.store.file.system.AdvancedFileSystemStore (Recomendada)
-- ##direct.servlet.context.reload=false (En producción evitar la recarga de jsp en cada petición)
-- #Ajustar Session timeout
-- #Ajustar ADT caché: En system settings ajustar la propiedad "resource modification check interval", por defecto es 60ms
+- portal-ext.properties: 
+	- com.liferay.portal.servlet.filters.* (Desactivar Servlet filters no utilizados)
+	- session.tracker.memory.enabled=false (Deshabilitar session tracket si está activo)
+	- portlet.css.enabled=false (Ajustar la propiedad si no se va a utilizar)
+	- locales.enabled= (Deshabilitar los que no se vayan a utilizar)
+	- dl.store.impl=com.liferay.portal.store.file.system.AdvancedFileSystemStore (Recomendada)
+	- direct.servlet.context.reload=false (En producción evitar la recarga de jsp en cada petición)
+- Ajustar Session timeout
+- Ajustar ADT caché: En system settings ajustar la propiedad "resource modification check interval", por defecto es 60ms
 
 #Resumen: 
 Como desarrolladores debemos asegurarnos principalmente de que nuestro sistema funcionalmente sea lo que quiere el usuario final pero es igualmente importante asegurar la estabilidad y respuesta de nuestra arquitectura optimizando tiempos de respuesta, plan de contingencia ante caídas, asegurar la alta disponibilidad, etc…
