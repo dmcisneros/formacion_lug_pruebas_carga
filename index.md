@@ -196,7 +196,7 @@ Las paginas **/02_test_lug_publicador_no_cache** y **/03_test_lug_publicador_cac
 (*) En el caso de tener una degradación en el portal sería conveniente realizar un análisis de hilos con un thread dumps (Ver:https://github.com/dmcisneros/lug_pruebas_carga/tree/master/thread_dumps)
 
 
-## 6º Analizar resultados de las pruebas realizar tunning y ajustar
+## 6º Analizar resultados de las pruebas, realizar tunning y ajustar
 
 Una vez obtenido un punto de referencia se recomienda hacer un tunning para optimizar y mejorar tiempos de respuesta, para ello Liferay  indica algunas recomendaciones como serían:
 - portal-ext.properties: 
