@@ -1,5 +1,9 @@
 # Pruebas de Rendimiento (Sobre Liferay)
 
+## Autores:
+- David Vega Perea (@davidsrules7)
+- Daniel Martínez Cisneros (@dmcisneros)
+
 ## Entorno:
 - Hardware:2,9 GHz Intel Core i7 (16 GB 2133 MHz LPDDR3)
 - Sistema Operativo: macOS Mojave (10.14.4)
