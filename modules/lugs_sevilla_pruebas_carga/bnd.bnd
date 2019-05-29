@@ -1,0 +1,14 @@
+Bundle-Name: lugs_sevilla_pruebas_carga
+Bundle-SymbolicName: com.liferay.lugs.sevilla.pruebascarga
+Bundle-Version: 1.0.0
+Export-Package: com.liferay.lugs.sevilla.pruebascarga.constants
+
+
+Bundle-ClassPath:\
+	.,\
+	lib/httpcore.jar,\
+	lib/httpclient.jar,
+	
+-includeresource:\
+  lib/httpcore.jar=httpcore*.jar,\
+  lib/httpclient.jar=httpclient*.jar,
