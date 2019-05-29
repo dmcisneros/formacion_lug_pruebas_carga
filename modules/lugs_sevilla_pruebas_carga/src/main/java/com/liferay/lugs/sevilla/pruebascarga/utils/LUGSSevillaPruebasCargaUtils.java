@@ -39,10 +39,11 @@ public class LUGSSevillaPruebasCargaUtils {
 	private static final Log LOG =
 		LogFactoryUtil.getLog(LUGSSevillaPruebasCargaUtils.class.getName());
 
-	// private static final String PROXY_HOST = null;
-	// private static final Integer PROXY_PORT = null;
-	private static final String PROXY_HOST = "proxy.indra.es";
-	private static final Integer PROXY_PORT = 8080;
+	// Set proxy host (if it's necessary)
+	private static final String PROXY_HOST = null;
+	
+	// Set proxy port (if it's necessary)
+	private static final Integer PROXY_PORT = null;
 
 	@Reference
 	JSONFactory jsonFactory;
