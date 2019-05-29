@@ -1,5 +1,9 @@
 # Pruebas de Rendimiento (Sobre Liferay)
 
+## Autores:
+- David Vega Perea (@davidsrules7)
+- Daniel Martínez Cisneros (@dmcisneros)
+
 ## Entorno:
 - Hardware:2,9 GHz Intel Core i7 (16 GB 2133 MHz LPDDR3)
 - Sistema Operativo: macOS Mojave (10.14.4)
@@ -211,8 +215,8 @@ Una vez obtenido un punto de referencia se recomienda hacer un tunning para opti
 
 - Optimizaciones en arquitectura: 
 	- Añadir sistema de caché (varnish, nginx, etc...)
-	
 - Ajustar ADT caché: En system settings ajustar la propiedad "resource modification check interval", por defecto es 60ms 
+- Tunning de JDK, GC, etc...
 
 # Resumen: 
 Como desarrolladores debemos asegurarnos principalmente de que nuestro sistema funcionalmente sea lo que quiere el usuario final pero es igualmente importante asegurar la estabilidad y respuesta de nuestra arquitectura optimizando tiempos de respuesta, plan de contingencia ante caídas, asegurar la alta disponibilidad, etc…
