@@ -1,0 +1,19 @@
+.lugs-sevilla-pruebas-carga #asteroids {
+	
+	.header {
+  		cursor: pointer;
+  		padding: 5px;
+
+		&.toggler-header-collapsed {
+		      border: 3px solid #a2a1ef;
+		}
+		
+		&.toggler-header-expanded {
+		      border: 3px solid #97ef97;
+		}
+	}
+	
+	.content.toggler-content-expanded {
+	      border: 1px solid #e7e7ed;
+	}
+}
