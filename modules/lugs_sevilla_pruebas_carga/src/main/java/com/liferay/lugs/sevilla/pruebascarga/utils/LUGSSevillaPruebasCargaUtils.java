@@ -41,7 +41,7 @@ public class LUGSSevillaPruebasCargaUtils {
 
 	// Set proxy host (if it's necessary)
 	private static final String PROXY_HOST = null;
-	
+
 	// Set proxy port (if it's necessary)
 	private static final Integer PROXY_PORT = null;
 

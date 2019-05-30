@@ -11,12 +11,21 @@
 	
 	<h1><liferay-ui:message key="lugs_sevilla_pruebas_carga.asteroids"/></h1>
 	<div id="asteroids">
-	<% for(Asteroid asteroid : asteroids){
+	<%
+	Boolean expanded = Boolean.TRUE;
+	String expandedClass = "";
+	for(Asteroid asteroid : asteroids){
 		if(asteroid != null) {
+			if(expanded) {
+				expandedClass = "expanded";
+				expanded = Boolean.FALSE;
+			} else {
+				expandedClass = "collapsed";
+			}
 	%>
 	
-	  <h4 class="header toggler-header-collapsed"><b><%=asteroid.getReadable_des() %></b></h4>
-	  <div class="content toggler-content-collapsed">
+	  <h4 class="header toggler-header-<%=expandedClass%>"><b><%=asteroid.getReadable_des() %></b></h4>
+	  <div class="content toggler-content-<%=expandedClass%>">
 	  	<ul>
 	  		<li><b>RMS: </b><%=asteroid.getRms() %></li>
 	  		<li><b>epoch: </b><%=asteroid.getEpoch() %></li>
