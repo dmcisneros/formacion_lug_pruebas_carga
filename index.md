@@ -1,8 +1,8 @@
 # Pruebas de Rendimiento (Sobre Liferay)
 
 ## Autores:
-- David Vega Perea (@davidsrules7)
-- Daniel Martínez Cisneros (@dmcisneros)
+- David Vega Perea ([@davidsrules7](https://twitter.com/DavidsRules7){:target="_blank"})
+- Daniel Martínez Cisneros ([@dmcisneros](https://twitter.com/dmcisneros){:target="_blank"})
 
 ## Entorno:
 - Hardware:2,9 GHz Intel Core i7 (16 GB 2133 MHz LPDDR3)
@@ -135,7 +135,7 @@ Hilos = 80 * 2500/1000  = 200
 	
 
 ## 5º Lanzar pruebas y monitorizar comportamiento
-Vamos a analizar el comportamiento el portal de liferay con 10 contenidos web 5 con una estructura con plantilla no cacheable y otros 5 con una estructura con plantilla cacheable.
+Vamos a analizar el comportamiento el portal de liferay con 10 contenidos web, 5 con una estructura con plantilla no cacheable y otros 5 con una estructura con plantilla cacheable. Del mismo modo, se estudiará la respuesta de un portlet a medida según utilice cache o no.
 
 
 **Pruebas previstas:**
@@ -151,6 +151,14 @@ Vamos a analizar el comportamiento el portal de liferay con 10 contenidos web 5 
 - **Página con un publicador de contenidos con contenidos web con plantilla cacheada:**
 	- Url: /03_test_lug_publicador_cache
 	- Descripción: En la primera carga el resultado será semejante a la página anterior pero en posteriores los tiempos de respuesta serán mejores al estar cacheada la plantilla.
+	
+- **Página con un portlet a medida sin hacer uso de cache:**
+	- Url: /04_test_lug_custom_module_no_cache
+	- Descripción: Al tener un portlet a medida que cada vez que realiza su renderizado realiza peticiones a API externa y posteriormente un tratamiento considerable de datos, se tendrán tiempos de respuestas muy altos cada vez que se acceda al mismo.
+
+- **Página con un portlet a medida haciendo uso de cache:**
+	- Url: /05_test_lug_custom_module_cache?cache=true
+	- Descripción: En la primera carga el resultado será semejante a la página anterior pero en posteriores los tiempos de respuesta serán mejores al estar cacheada la llamada a la API y gran parte del tratamiento de datos del módulo a medida.
 
 
 Antes de lanzar las pruebas deberíamos monitorizar el comportamiento de nuestra arquitectura con herramientas como jvisualvm, jmc ó jconsole. Puntos de interés dentro de las métricas que podemos observar:
@@ -163,7 +171,8 @@ Antes de lanzar las pruebas deberíamos monitorizar el comportamiento de nuestra
 	- vPool Hikari** (Pool de conexiones usado por defecto en Liferay)
 ![Image](https://raw.githubusercontent.com/dmcisneros/lug_pruebas_carga/master/images/05.png)
 
-### Lanzamientos de Pruebas #1
+### Lanzamientos de Pruebas Elementos OOTB
+#### Lanzamiento de Pruebas Elementos OOTB #1:
 - **Página con un visor de contenidos:** /01_test_lug_visor 
 - **Página con un visor de contenidos con contenido web con plantilla cacheada:** /02_test_lug_publicador_no_cache
 - **Página con un visor de contenidos con contenido web con plantilla sin cachear:** /03_test_lug_publicador_cache
@@ -182,10 +191,11 @@ De la misma forma se observan picos constantes de latencias altas.
 
 	
 
-### Lanzamiento Pruebas #2: 
-Se cambiará la configuración de la plantilla que no era cacheable, ahora se pondrá cacheable y se ejecutarán las mismas pruebas de carga de Pruebas #1 . 
+#### Lanzamiento de Pruebas Elementos OOTB #2:
+Se cambiará la configuración de la plantilla que no era cacheable, ahora se pondrá cacheable y se ejecutarán las mismas pruebas de carga de Pruebas Elementos OOTB #1 . 
 
 **Resultados:**
+
 Las paginas **/02_test_lug_publicador_no_cache** y **/03_test_lug_publicador_cache** ahora muestran resultados semejantes teniendo tiempos de latencia medios más bajos que los resultados anteriores, observandose que en solo 5 contenidos con plantillas no cacheadas empieza a degradarse la respuesta. 
 
 ![Image](https://raw.githubusercontent.com/dmcisneros/lug_pruebas_carga/master/images/09.png)
@@ -195,6 +205,53 @@ Las paginas **/02_test_lug_publicador_no_cache** y **/03_test_lug_publicador_cac
 ![Image](https://raw.githubusercontent.com/dmcisneros/lug_pruebas_carga/master/images/11.png)
 
 
+
+### Lanzamiento Pruebas Módulo Ad hoc: 
+#### Lanzamiento de Pruebas Módulo Ad hoc #1:
+- **Página con un portlet a medida sin hacer uso de cache:** /04_test_lug_custom_module_no_cache 
+	
+Para ofrecer una comparación entre los elementos OOTB y un módulo Ad hoc mantendremos las 3 pruebas realizadas sobre elementos OOTB de Liferay (**/01_test_lug_visor**, **/02_test_lug_publicador_no_cache** y **/03_test_lug_publicador_cache**).
+
+**Resultados:**
+
+Se puede observar que no se puede mantener el nivel de respuestas por segundo pretendido (80), sino que se produce un colapso debido al coste que conlleva cada una de las peticiones. Ya que al no cachearse los datos a mostrar, por cada petición se realiza una comunicación de red con una API externa, así como el tratamiento de los datos recibidos.
+
+![Image](https://raw.githubusercontent.com/dmcisneros/lug_pruebas_carga/master/images/12_sin_cache.png)
+
+Debido a los altos tiempos de ejecución que implica una comunicación por red, al no utilizar caché se obtienen latencias altas, donde tras el colapso y acumulación de peticiones aumentan de forma drástica llegando a latencias de 9 segundos.
+
+![Image](https://raw.githubusercontent.com/dmcisneros/lug_pruebas_carga/master/images/13_sin_cache.png)
+
+Si comparamos los tiempos de respuesta obtenidos en esta página con las 3 que contienen elementos OOTB, observamos que siempre se encuentra por encima. Incluso podemos observar como llegados al punto en el que empieza el colapso, no sólo empeora los tiempos de respuestas de la página con el módulo Ad hoc, sino que también degrada el rendimiento en las páginas restantes.
+
+![Image](https://raw.githubusercontent.com/dmcisneros/lug_pruebas_carga/master/images/14_sin_cache.png)
+
+
+#### Lanzamiento de Pruebas Módulo Ad hoc #2:
+- **Página con un portlet a medida haciendo uso de cache:** /05_test_lug_custom_module_cache?cache=true
+	
+
+**Resultados:**
+
+Se puede observar cómo en este caso sí se mantiene el nivel de respuestas por segundo pretendido (80). Ya que al cachearse los datos a mostrar, el 100% del coste de la operación se realiza en la primera petición mientras que en las siguientes se reduce conciderablemente el coste computacional.
+
+![Image](https://raw.githubusercontent.com/dmcisneros/lug_pruebas_carga/master/images/12_con_cache.png)
+
+En este caso, los tiempos de latencia son bajos debido al ahorro computacional que proporciona el uso de cache, lo cual previene el colapso y acumulación de peticiones. Cuantitativamente el mayor pico que tenemos con cache es de 155 milisegundos, cuando sin cache se tuvo un pico de 9 segundos de latencia.
+
+![Image](https://raw.githubusercontent.com/dmcisneros/lug_pruebas_carga/master/images/13_con_cache.png)
+
+Al igual que ocurrió en el ejemplo anterior, los tiempos de respuesta del módulo Ad hoc siempre está por encima de los elementos OOTB, pero en este caso no se produce ningún colapso que degrade ninguna de las páginas.
+
+![Image](https://raw.githubusercontent.com/dmcisneros/lug_pruebas_carga/master/images/14_con_cache.png)
+
+Fijándonos en la influencia sobre la máquina, observamos que en cuando se utiliza la cache en el módulo ad hoc (actividad de las 19:25) la CPU está entorno al 50% del rendimiento, con picos del 67%, y no se produce apenas un aumento del número de hilos. Mientras que sin el uso de la cache (actividad de las 19:30) la CPU sufre mayores porcentajes de uso, llegando a picos del 100% y casi se triplica el número de hilos.
+
+![Image](https://raw.githubusercontent.com/dmcisneros/lug_pruebas_carga/master/images/15_sin_cache.png)
+
+Por último, cabe mencionar el alto acierto generado en la cache usada para la prueba del módulo ad hoc con cache. Acertando en 1949 peticiones y fallando sólamente en 1 (la primera).
+
+![Image](https://raw.githubusercontent.com/dmcisneros/lug_pruebas_carga/master/images/16.png)
 
 
 (*) En el caso de tener una degradación en el portal sería conveniente realizar un análisis de hilos con un thread dumps (Ver:https://github.com/dmcisneros/lug_pruebas_carga/tree/master/thread_dumps)
