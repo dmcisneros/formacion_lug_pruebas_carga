@@ -259,21 +259,34 @@ Por último, cabe mencionar el alto acierto generado en la cache usada para la p
 
 ## 6º Analizar resultados de las pruebas, realizar tunning y ajustar
 
-Una vez obtenido un punto de referencia se recomienda hacer un tunning para optimizar y mejorar tiempos de respuesta, para ello Liferay  indica algunas recomendaciones como serían:
+Una vez obtenido un punto de referencia se recomienda hacer un tunning para optimizar y mejorar tiempos de respuesta, cada proyecto por la propia arquitectura, elementos de red, desarrollos realizados tendrán una configuración que se adapte mejor a sus necesidades no pudiendo recomendaciones estandarizadas siendo diferentes para cada caso, Liferay indica algunas recomendaciones básicas en su documento **Deployment Checklist** como serían:
 - portal-ext.properties: 
 	- com.liferay.portal.servlet.filters.* (Desactivar Servlet filters no utilizados)
 	- session.tracker.memory.enabled=false (Deshabilitar session tracket si está activo)
-	- portlet.css.enabled=false (Ajustar la propiedad si no se va a utilizar)
+	- portlet.css.enabled=false (Ajustar la propiedad si no se va a utilizar personalización de apariencia desde portlets)
 	- locales.enabled= (Deshabilitar los que no se vayan a utilizar)
 	- dl.store.impl=com.liferay.portal.store.file.system.AdvancedFileSystemStore (Recomendada)
 	- direct.servlet.context.reload=false (En producción evitar la recarga de jsp en cada petición)
+	- counter.increment=2000 (Ajustar los indices de contadores)
+	- buffered.increment.standby.queue.threshold=60
+	- buffered.increment.standby.time.upper.limit=10000
+	- dl.file.rank.enabled=false
+	- dl.file.rank.check.interval=-1
+	- blogs.ping.google.enabled=false
+	- blogs.pingback.enabled=false
+	- blogs.trackback.enabled=false
+	- message.boards.pingback.enabled=false
+	- live.users.enabled=false
+	- session.tracker.memory.enabled=false
+	- session.tracker.persistence.enabled=false
+	- session.tracker.friendly.paths.enabled=false
 - Ajustar Session timeout
+- Ajustar server.xml con recomendaciones del fichero Deployment Checklist
 - Ajustar ADT caché: En system settings ajustar la propiedad "resource modification check interval", por defecto es 60ms
-
-- Optimizaciones en arquitectura: 
-	- Añadir sistema de caché (varnish, nginx, etc...)
-- Ajustar ADT caché: En system settings ajustar la propiedad "resource modification check interval", por defecto es 60ms 
 - Tunning de JDK, GC, etc...
+- Añadir elementos frontales para tratamiento de estáticos como podrian ser varnish, nginx, etc...
+- Large Cluster pages en SO
+- Y más allá....
 
 # Resumen: 
 Como desarrolladores debemos asegurarnos principalmente de que nuestro sistema funcionalmente sea lo que quiere el usuario final pero es igualmente importante asegurar la estabilidad y respuesta de nuestra arquitectura optimizando tiempos de respuesta, plan de contingencia ante caídas, asegurar la alta disponibilidad, etc…
@@ -283,16 +296,4 @@ Como desarrolladores debemos asegurarnos principalmente de que nuestro sistema f
 - [https://sdos.es/blog/pruebas-de-rendimiento-con-jmeter-ejemplos-basicos](https://sdos.es/blog/pruebas-de-rendimiento-con-jmeter-ejemplos-basicos)
 - [https://www.softwaretestinghelp.com/performance-testing-tools-load-testing-tools/](https://www.softwaretestinghelp.com/performance-testing-tools-load-testing-tools/)
 - [https://jmeter-plugins.org/wiki/ThroughputShapingTimer/](https://jmeter-plugins.org/wiki/ThroughputShapingTimer/)
-
-
-
-
-
-
-
-
-
-
-
-
 
